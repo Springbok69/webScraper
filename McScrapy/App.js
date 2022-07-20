@@ -3,10 +3,12 @@ import {TouchableOpacity, FlatList,Text, View, Button, StyleSheet, Platform, Saf
 import {Card} from 'react-native-elements'
 import { NavigationContainer } from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-
+import { RNCamera } from 'react-native-camera';
 
 // main app rendering
 const thisApp = () => {
+
+
 
 
 //function that is SUPPOSED to add 2 to the state
@@ -31,6 +33,11 @@ const Data1 = [{key: 203, name: "mike langford"},
               {key: 212, name: "Joe Biden"},
               {key: 213, name: "Hunter Biden"},
               {key: 214, name: "The BigGuy"}]
+
+
+
+              
+
 
 
 
@@ -64,8 +71,6 @@ function SettingsScreen() {
 }
 
 
-
-
 return(
 <SafeAreaView style = {{flex: 1,backgroundColor: '#FF5733'}}>
 <View >
@@ -83,11 +88,11 @@ return(
   <Text style = {{color:'#FFFFFF',padding: 10,paddingBottom: 20, marginBottom:20}}>my useRef name is.... {RefContainer.current}</Text>
   
   <Pressable  onPress={adder}  style={ ({pressed}) => [
-    {borderColor:'#626262',borderWidth: 3 ,borderRadius:10, backgroundColor: pressed ? '#BEBEBE' : 'grey'}]
-   
-
-    } >
-<Text style = {{fontSize: 16,
+    {borderColor:'#626262',
+    borderWidth: 3 ,
+    borderRadius:10, 
+    backgroundColor: pressed ? '#BEBEBE' : 'grey'}] } >
+ <Text style = {{fontSize: 16,
     marginBottom:20,
     marginTop: 20,
     lineHeight: 21,
@@ -105,49 +110,27 @@ return(
       <Text style ={styles.listing}  >{item.name}</Text>
     )   } />
 
-   
-
-
-
 </View>
-
-
-
-  </View>
-  <View>
-
 </View>
-
+<View>
 </View>
-
-
-
 </View>
-
 </View>
+</View>
+</SafeAreaView>
+)}
 
 
 
 
-
-  </SafeAreaView>
-
-
-
-
-  )
-
-
-
-}
 
 
 const styles = StyleSheet.create({
   bigButton:{
-    borderRadius:10
+          borderRadius:10
   },
   inside:{
-borderRadius: 15
+          borderRadius: 15
   },
   bigblue: {
            
@@ -162,71 +145,16 @@ borderRadius: 15
           borderRadius: 100/2
   },
   listing:{
-    flex:1,
-    paddingHorizontal: 20,
-    padding:10,
-    color: 'black',
-    fontWeight: 'bold',
-    fontSize: 20,
-    backgroundColor: 'white',
-    borderWidth: .5
+          flex:1,
+          paddingHorizontal: 20,
+          padding:10,
+          color: 'black',
+          fontWeight: 'bold',
+          fontSize: 20,
+          backgroundColor: 'white',
+          borderWidth: .5
   }
 });
 
 
-
-
-
 export default thisApp;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import { Text, View } from 'react-native';
-
-// const Blink = (props) => {
-//   const [isShowingText, setIsShowingText] = useState(true);
-
-//    useEffect(() => {
-//      const toggle = setInterval(() => {
-//        setIsShowingText(!isShowingText);
-//      }, 1000);
-
-//      return () => clearInterval(toggle);
-//   })
-
-//   if (!isShowingText) {
-//     return null;
-//   }
-
-//   return <Text>{props.text}</Text>;
-// }
-
-// const BlinkApp = () => {
-//   return (
-//     <View style={{marginTop: 50}}>
-//       <Blink text='I love to blink' />
-//       <Blink text='Yes blinking is so great' />
-//       <Blink text='Why did they ever take this out of HTML' />
-//       <Blink text='Look at me look at me look at me' />
-//     </View>
-//   );
-// }
-
-// export default BlinkApp;
-
-
-
