@@ -8,9 +8,6 @@ import { RNCamera } from 'react-native-camera';
 // main app rendering
 const thisApp = () => {
 
-
-
-
 //function that is SUPPOSED to add 2 to the state
 //const adder = setState(state + 1, [state])
 // state and setstate
@@ -33,13 +30,7 @@ const Data1 = [{key: 203, name: "mike langford"},
               {key: 212, name: "Joe Biden"},
               {key: 213, name: "Hunter Biden"},
               {key: 214, name: "The BigGuy"}]
-
-
-
-              
-
-
-
+ 
 
 
   function MyTabs() {
@@ -119,10 +110,6 @@ return(
 </View>
 </SafeAreaView>
 )}
-
-
-
-
 
 
 const styles = StyleSheet.create({
